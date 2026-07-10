@@ -9,32 +9,37 @@ import { Pic } from './models/shared-pic';
   styleUrl: './app.scss',
 })
 export class App implements OnInit {
+  pics!: Pic[];
+
   myPic!: Pic;
   mySecondPic!: Pic;
   myThirdPic!: Pic;
 
   ngOnInit(): void {
-    this.myPic = new Pic(
-      'Ferrari',
-      'https://testecar.com/wp-content/uploads/2026/05/ferrari-luce-avant-gauche-1024x576.jpg',
-      'Luce?!',
-      new Date(),
-      0,
-    );
-    this.mySecondPic = new Pic(
-      'Talbo',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQh3qnbAr0FKdQ8h63xCsKWMWT3pNmZ69aTMNSpmgtw&s=10',
-      'Samba!',
-      new Date(),
-      1,
-    );
-    this.myThirdPic = new Pic(
-      'Renault',
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2kdLuABwr9vTKXIYBpACoHzGRSMdl0CZzvx3G28iu_g&s=10',
-      '18!',
-      new Date(),
-      2,
-    );
-    this.myThirdPic.setLocation('Dans le 18ème...')
+    this.pics = [
+      new Pic(
+        'Ferrari',
+        'https://testecar.com/wp-content/uploads/2026/05/ferrari-luce-avant-gauche-1024x576.jpg',
+        'Luce?!',
+        new Date(),
+        0,
+      ),
+      new Pic(
+        'Talbo',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQh3qnbAr0FKdQ8h63xCsKWMWT3pNmZ69aTMNSpmgtw&s=10',
+        'Samba 💃🏾',
+        new Date(),
+        1,
+      ),
+      new Pic(
+        'Renault',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2kdLuABwr9vTKXIYBpACoHzGRSMdl0CZzvx3G28iu_g&s=10',
+        '18!',
+        new Date(),
+        2,
+      ),
+    ];
+
+    this.pics[2].setLocation('Dans le 18ème...');
   }
 }
