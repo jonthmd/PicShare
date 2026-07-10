@@ -1,4 +1,4 @@
-<div class="shared-pic-card">
+<div class="shared-pic-card" [ngClass]="{liked: userHasLiked}" ]>
   <h2>{{ pic.title }}</h2>
   <img [src]="pic.imageUrl" [alt]="pic.title">
   <p> {{ pic.description }}</p>
