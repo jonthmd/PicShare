@@ -8,7 +8,8 @@
   } <!--  else possible ici-->
   <p>
     <button (click)="onLike()">{{ likeButtonText }}</button>
-    ❤️ : {{ pic.likes }}
+    <span [ngStyle]="{color:'rgb(0,'+ pic.likes +',0)'}">❤️ : {{ pic.likes }}</span>
+<!--plus il y aura de likes, plus la couleur sera verte-->
   </p>
 </div>
 

@@ -11,9 +11,9 @@ import { Pic } from './models/shared-pic';
 export class App implements OnInit {
   pics!: Pic[];
 
-  myPic!: Pic;
-  mySecondPic!: Pic;
-  myThirdPic!: Pic;
+  // myPic!: Pic;
+  // mySecondPic!: Pic;
+  // myThirdPic!: Pic;
 
   ngOnInit(): void {
     this.pics = [
@@ -29,14 +29,14 @@ export class App implements OnInit {
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQh3qnbAr0FKdQ8h63xCsKWMWT3pNmZ69aTMNSpmgtw&s=10',
         'Samba 💃🏾',
         new Date(),
-        1,
+        100,
       ),
       new Pic(
         'Renault',
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2kdLuABwr9vTKXIYBpACoHzGRSMdl0CZzvx3G28iu_g&s=10',
         '18!',
         new Date(),
-        2,
+        200,
       ),
     ];
 

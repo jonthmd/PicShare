@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pic } from '../models/shared-pic';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-shared-pic',
-  imports: [],
+  imports: [NgStyle],
   templateUrl: './shared-pic.html',
   styleUrl: './shared-pic.scss',
 })
