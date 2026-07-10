@@ -11,6 +11,7 @@ import { Pic } from './models/shared-pic';
 export class App implements OnInit {
   myPic!: Pic;
   mySecondPic!: Pic;
+  myThirdPic!: Pic;
 
   ngOnInit(): void {
     this.myPic = new Pic(
@@ -27,5 +28,13 @@ export class App implements OnInit {
       new Date(),
       1,
     );
+    this.myThirdPic = new Pic(
+      'Renault',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2kdLuABwr9vTKXIYBpACoHzGRSMdl0CZzvx3G28iu_g&s=10',
+      '18!',
+      new Date(),
+      2,
+    );
+    this.myThirdPic.setLocation('Dans le 18ème...')
   }
 }

@@ -3,6 +3,9 @@
   <img [src]="pic.imageUrl" [alt]="pic.title">
   <p> {{ pic.description }}</p>
   <p> PicShare créé le {{ pic.createdAt }}</p>
+  @if (pic.location) {
+    <p>Localisation: {{ pic.location }}</p>
+  } <!--  else possible ici-->
   <p>
     <button (click)="onLike()">{{ likeButtonText }}</button>
     ❤️ : {{ pic.likes }}
