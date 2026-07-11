@@ -1,5 +1,5 @@
 <div class="shared-pic-card" [ngClass]="{liked: userHasLiked}" ]>
-  <h2>{{ pic.title }}</h2>
+  <h2>{{ pic.title | titlecase }}</h2>
   <img [src]="pic.imageUrl" [alt]="pic.title">
   <p> {{ pic.description }}</p>
   <p> PicShare créé le {{ pic.createdAt }}</p>
@@ -9,7 +9,7 @@
   <p>
     <button (click)="onLike()">{{ likeButtonText }}</button>
     <span [ngStyle]="{color:'rgb(0,'+ pic.likes +',0)'}">❤️ : {{ pic.likes }}</span>
-<!--plus il y aura de likes, plus la couleur sera verte-->
+    <!--plus il y aura de likes, plus la couleur sera verte-->
   </p>
 </div>
 

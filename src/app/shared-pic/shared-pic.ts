@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pic } from '../models/shared-pic';
-import { NgClass, NgStyle } from '@angular/common';
+import { LowerCasePipe, NgClass, NgStyle, TitleCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-shared-pic',
-  imports: [NgStyle, NgClass],
+  imports: [NgStyle, NgClass, UpperCasePipe, LowerCasePipe, TitleCasePipe],
   templateUrl: './shared-pic.html',
   styleUrl: './shared-pic.scss',
 })
