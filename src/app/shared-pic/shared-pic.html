@@ -2,7 +2,7 @@
   <h2>{{ pic.title | titlecase }}</h2>
   <img [src]="pic.imageUrl" [alt]="pic.title">
   <p> {{ pic.description }}</p>
-  <p> PicShare créé le {{ pic.createdAt }}</p>
+  <p> PicShare créé le {{ pic.createdAt | date:'d MMMM yyyy, à HH:mm' }}</p>
   @if (pic.location) {
     <p>Localisation: {{ pic.location }}</p>
   } <!--  else possible ici-->
