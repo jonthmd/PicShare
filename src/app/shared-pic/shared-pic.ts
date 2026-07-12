@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pic } from '../models/shared-pic';
 import {
+  CurrencyPipe,
   DatePipe,
   DecimalPipe,
   LowerCasePipe,
@@ -13,7 +14,7 @@ import {
 
 @Component({
   selector: 'app-shared-pic',
-  imports: [NgStyle, NgClass, UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, DecimalPipe, PercentPipe ],
+  imports: [NgStyle, NgClass, UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, DecimalPipe, PercentPipe, CurrencyPipe ],
   templateUrl: './shared-pic.html',
   styleUrl: './shared-pic.scss',
 })
@@ -27,7 +28,7 @@ export class SharedPic implements OnInit {
   // imageUrl!: string;
   likeButtonText!: string;
   userHasLiked!: boolean;
-  myPercentage: number = 0.389;
+  myMoney: number = 389.50;
 
   ngOnInit(): void {
     // this.title = 'Ferrari';
