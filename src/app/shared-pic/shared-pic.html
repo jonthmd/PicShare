@@ -1,4 +1,6 @@
 <div class="shared-pic-card" [ngClass]="{liked: userHasLiked}" ]>
+  <h1>{{ myVeryBigNumber | number:'1.0-0'}}</h1>
+
   <h2>{{ pic.title | titlecase }}</h2>
   <img [src]="pic.imageUrl" [alt]="pic.title">
   <p> {{ pic.description }}</p>

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Pic } from '../models/shared-pic';
 import {
   DatePipe,
+  DecimalPipe,
   LowerCasePipe,
   NgClass,
   NgStyle,
@@ -11,7 +12,7 @@ import {
 
 @Component({
   selector: 'app-shared-pic',
-  imports: [NgStyle, NgClass, UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe],
+  imports: [NgStyle, NgClass, UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, DecimalPipe],
   templateUrl: './shared-pic.html',
   styleUrl: './shared-pic.scss',
 })
@@ -25,6 +26,7 @@ export class SharedPic implements OnInit {
   // imageUrl!: string;
   likeButtonText!: string;
   userHasLiked!: boolean;
+  myVeryBigNumber: number = 1234567.89;
 
   ngOnInit(): void {
     // this.title = 'Ferrari';
