@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Pic } from '../models/shared-pic';
+import { Pic } from '../models/shared-pic-model';
 import {
   CurrencyPipe,
   DatePipe,
@@ -11,10 +11,21 @@ import {
   TitleCasePipe,
   UpperCasePipe,
 } from '@angular/common';
+import { SharedPicsService } from '../services/shared-pics.service';
 
 @Component({
   selector: 'app-shared-pic',
-  imports: [NgStyle, NgClass, UpperCasePipe, LowerCasePipe, TitleCasePipe, DatePipe, DecimalPipe, PercentPipe, CurrencyPipe ],
+  imports: [
+    NgStyle,
+    NgClass,
+    UpperCasePipe,
+    LowerCasePipe,
+    TitleCasePipe,
+    DatePipe,
+    DecimalPipe,
+    PercentPipe,
+    CurrencyPipe,
+  ],
   templateUrl: './shared-pic.html',
   styleUrl: './shared-pic.scss',
 })
@@ -26,9 +37,14 @@ export class SharedPic implements OnInit {
   // createdAt!: Date;
   // likes!: number;
   // imageUrl!: string;
+  // myMoney: number = 389.5;
+
   likeButtonText!: string;
   userHasLiked!: boolean;
-  myMoney: number = 389.50;
+
+  constructor(private sharedPicsService: SharedPicsService) {
+
+  }
 
   ngOnInit(): void {
     // this.title = 'Ferrari';
@@ -43,20 +59,20 @@ export class SharedPic implements OnInit {
 
   onLike(): void {
     if (this.userHasLiked) {
-      this.unlike();
+      this.dislike();
     } else {
       this.like();
     }
   }
 
   like(): void {
-    this.pic.addLike();
-    this.likeButtonText = 'Unlike it.';
+    this.sharedPicsService.likeSharedPicById(this.pic.id, 'like');
+    this.likeButtonText = 'Dislike it.';
     this.userHasLiked = true;
   }
 
-  unlike(): void {
-    this.pic.removeLike();
+  dislike(): void {
+    this.sharedPicsService.likeSharedPicById(this.pic.id, 'dislike');
     this.likeButtonText = 'I like it!';
     this.userHasLiked = false;
   }

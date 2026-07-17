@@ -1,45 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedPic } from './shared-pic/shared-pic';
-import { Pic } from './models/shared-pic';
+import { SharedPicList } from './shared-pic-list/shared-pic-list';
+import { Header } from './header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [SharedPic],
+  imports: [SharedPic, SharedPicList, Header],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App implements OnInit {
-  pics!: Pic[];
-
-  // myPic!: Pic;
-  // mySecondPic!: Pic;
-  // myThirdPic!: Pic;
-
-  ngOnInit(): void {
-    this.pics = [
-      new Pic(
-        'ferrari',
-        'https://testecar.com/wp-content/uploads/2026/05/ferrari-luce-avant-gauche-1024x576.jpg',
-        'Luce?!',
-        new Date(),
-        0,
-      ),
-      new Pic(
-        'talbo',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsQh3qnbAr0FKdQ8h63xCsKWMWT3pNmZ69aTMNSpmgtw&s=10',
-        'Samba 💃🏾',
-        new Date(),
-        100,
-      ),
-      new Pic(
-        'renault',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2kdLuABwr9vTKXIYBpACoHzGRSMdl0CZzvx3G28iu_g&s=10',
-        '18!',
-        new Date(),
-        200,
-      ),
-    ];
-
-    this.pics[2].setLocation('Dans le 18ème...');
-  }
-}
+export class App {}
