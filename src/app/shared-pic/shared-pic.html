@@ -1,16 +1,5 @@
-<div class="shared-pic-card" [ngClass]="{liked: userHasLiked}" ]>
-<!--  <h1>{{ myMoney | currency: 'EUR' : 'code': '1.0-0' }}</h1>-->
+<div class="shared-pic-card">
   <h2>{{ pic.title | titlecase }}</h2>
-  <img [src]="pic.imageUrl" [alt]="pic.title">
-  <p> {{ pic.description }}</p>
-  <p> PicShare créé le {{ pic.createdAt | date:'d MMMM yyyy, à HH:mm' }}</p>
-  @if (pic.location) {
-    <p>Localisation: {{ pic.location }}</p>
-  } <!--  else possible ici-->
-  <p>
-    <button (click)="onLike()">{{ likeButtonText }}</button>
-    <span [ngStyle]="{color:'rgb(0,'+ pic.likes +',0)'}">❤️ : {{ pic.likes }}</span>
-    <!--plus il y aura de likes, plus la couleur sera verte-->
-  </p>
+<button (click)="onViewPic()">VIEW</button>
 </div>
 

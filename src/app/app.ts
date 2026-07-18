@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { SharedPic } from './shared-pic/shared-pic';
-import { SharedPicList } from './shared-pic-list/shared-pic-list';
+import { Component } from '@angular/core';
 import { Header } from './header/header';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [SharedPic, SharedPicList, Header],
+  imports: [Header, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

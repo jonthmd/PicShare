@@ -1,4 +1,3 @@
-import { SharedPic } from '../shared-pic/shared-pic';
 import { PicType } from './pic-type.type';
 
 export class Pic {
@@ -23,7 +22,7 @@ export class Pic {
     this.likes--;
   }
 
-  pic(picType: PicType): void {
+  like(picType: PicType): void {
     if (picType === 'like') {
       this.addLike();
     } else if (picType === 'dislike') {

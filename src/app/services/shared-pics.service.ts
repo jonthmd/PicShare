@@ -34,11 +34,16 @@ export class SharedPicsService {
     return [...this.pics];
   }
 
-  likeSharedPicById(picId: string, picType: PicType): void {
-    const foundPic = this.pics.find(pic => pic.id === picId);
+  getPicById(picId: string): Pic {
+    const foundPic = this.pics.find((pic) => pic.id === picId);
     if (!foundPic) {
       throw new Error('Failed to find pic with id ' + picId);
     }
-    foundPic.pic(picType);
+    return foundPic;
+  }
+
+  likeSharedPicById(picId: string, picType: PicType): void {
+    const pic = this.getPicById(picId);
+    pic.like(picType);
   }
 }
